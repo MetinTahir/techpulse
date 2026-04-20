@@ -327,36 +327,60 @@
         </div>
       </div>
 
-      <div class="features-grid">
-        <div class="feature-card" style="animation-delay:0.1s">
-          <div class="feature-icon">📰</div>
-          <div class="feature-title">HackerNews Haberleri</div>
-          <div class="feature-desc">Top, yeni, en iyi, iş ve Show HN haberleri, kategori filtresiyle.</div>
+      <div class="features-section">
+        <div class="features-header">
+          <h2 class="section-title"><span>🧩</span> Platform Özellikleri</h2>
+          <p class="features-subtitle">Tek çatı altında tüm teknoloji içerikleri</p>
         </div>
-        <div class="feature-card" style="animation-delay:0.2s">
-          <div class="feature-icon">💻</div>
-          <div class="feature-title">GitHub Trend Repolar</div>
-          <div class="feature-desc">Dile ve periyoda göre filtrelenmiş en popüler repolar.</div>
-        </div>
-        <div class="feature-card" style="animation-delay:0.3s">
-          <div class="feature-icon">🔍</div>
-          <div class="feature-title">GitHub Kullanıcı Arama</div>
-          <div class="feature-desc">GitHub kullanıcılarını ara, profil ve repolarını incele.</div>
-        </div>
-        <div class="feature-card" style="animation-delay:0.4s">
-          <div class="feature-icon">✍️</div>
-          <div class="feature-title">Dev.to Makaleleri</div>
-          <div class="feature-desc">Geliştirici topluluğundan en güncel teknik makaleler.</div>
-        </div>
-        <div class="feature-card" style="animation-delay:0.5s">
-          <div class="feature-icon">⭐</div>
-          <div class="feature-title">Favoriler</div>
-          <div class="feature-desc">Beğendiğin içerikleri localStorage'a kaydet, her zaman eriş.</div>
-        </div>
-        <div class="feature-card" style="animation-delay:0.6s">
-          <div class="feature-icon">🌓</div>
-          <div class="feature-title">Karanlık / Aydınlık Mod</div>
-          <div class="feature-desc">Göz yorgunluğunu azalt, istediğin temayı seç.</div>
+        <div class="features-grid">
+          <a href="#/news" class="feature-card" style="animation-delay:0.05s">
+            <div class="feature-icon-wrap" style="--fc:#ff6b35">📰</div>
+            <div class="feature-title">HackerNews Haberleri</div>
+            <div class="feature-desc">Top, yeni, en iyi, iş ve Show HN haberleri. 5 farklı kategori filtresi.</div>
+            <div class="feature-arrow">→</div>
+          </a>
+          <a href="#/repos" class="feature-card" style="animation-delay:0.1s">
+            <div class="feature-icon-wrap" style="--fc:#6c63ff">💻</div>
+            <div class="feature-title">GitHub Trend Repolar</div>
+            <div class="feature-desc">9 dil ve 3 zaman periyoduna göre filtrelenmiş en popüler repolar.</div>
+            <div class="feature-arrow">→</div>
+          </a>
+          <a href="#/search" class="feature-card" style="animation-delay:0.15s">
+            <div class="feature-icon-wrap" style="--fc:#00d2ff">🔍</div>
+            <div class="feature-title">GitHub Kullanıcı Arama</div>
+            <div class="feature-desc">Herhangi bir GitHub kullanıcısının profilini, repolarını ve istatistiklerini incele.</div>
+            <div class="feature-arrow">→</div>
+          </a>
+          <a href="#/articles" class="feature-card" style="animation-delay:0.2s">
+            <div class="feature-icon-wrap" style="--fc:#a855f7">✍️</div>
+            <div class="feature-title">Dev.to Makaleleri</div>
+            <div class="feature-desc">8 farklı etiketle filtrelenmiş geliştirici topluluğu makaleleri.</div>
+            <div class="feature-arrow">→</div>
+          </a>
+          <a href="#/favorites" class="feature-card" style="animation-delay:0.25s">
+            <div class="feature-icon-wrap" style="--fc:#ffd600">⭐</div>
+            <div class="feature-title">Favoriler</div>
+            <div class="feature-desc">Haber, repo ve makale favorilerini localStorage'a kaydet, istediğin zaman aç.</div>
+            <div class="feature-arrow">→</div>
+          </a>
+          <div class="feature-card" style="animation-delay:0.3s">
+            <div class="feature-icon-wrap" style="--fc:#00c853">🌓</div>
+            <div class="feature-title">Karanlık / Aydınlık Mod</div>
+            <div class="feature-desc">Tercihine göre tema seç. Seçim tarayıcıya otomatik kaydedilir.</div>
+            <div class="feature-arrow feature-arrow--static">☀️🌙</div>
+          </div>
+          <div class="feature-card" style="animation-delay:0.35s">
+            <div class="feature-icon-wrap" style="--fc:#ff1744">📊</div>
+            <div class="feature-title">Canlı Grafikler</div>
+            <div class="feature-desc">Chart.js ile HackerNews puan grafikleri ve GitHub dil dağılım çizelgeleri.</div>
+            <div class="feature-arrow feature-arrow--static">Chart.js</div>
+          </div>
+          <div class="feature-card" style="animation-delay:0.4s">
+            <div class="feature-icon-wrap" style="--fc:#00d2ff">⚡</div>
+            <div class="feature-title">SPA Router</div>
+            <div class="feature-desc">Sayfa yenileme olmadan hash tabanlı gezinti. Tüm veriler önbelleğe alınır.</div>
+            <div class="feature-arrow feature-arrow--static">Hash URL</div>
+          </div>
         </div>
       </div>`;
 
