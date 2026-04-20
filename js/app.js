@@ -281,27 +281,11 @@
               </div>
             </div>
           </div>
-          <div class="profile-stats-panel">
-            <div class="pstat-card">
-              <div class="pstat-icon">🚀</div>
-              <div class="pstat-num">12</div>
-              <div class="pstat-label">Proje</div>
-            </div>
-            <div class="pstat-card">
-              <div class="pstat-icon">⭐</div>
-              <div class="pstat-num">48</div>
-              <div class="pstat-label">Star</div>
-            </div>
-            <div class="pstat-card">
-              <div class="pstat-icon">🍴</div>
-              <div class="pstat-num">7</div>
-              <div class="pstat-label">Fork</div>
-            </div>
-            <div class="pstat-card">
-              <div class="pstat-icon">📅</div>
-              <div class="pstat-num">2yıl</div>
-              <div class="pstat-label">Deneyim</div>
-            </div>
+          <div class="profile-stats-panel" id="profileStatsPanel">
+            <div class="pstat-card"><div class="skeleton sk-line full" style="height:80px;border-radius:12px"></div></div>
+            <div class="pstat-card"><div class="skeleton sk-line full" style="height:80px;border-radius:12px"></div></div>
+            <div class="pstat-card"><div class="skeleton sk-line full" style="height:80px;border-radius:12px"></div></div>
+            <div class="pstat-card"><div class="skeleton sk-line full" style="height:80px;border-radius:12px"></div></div>
           </div>
         </div>
       </section>
@@ -387,6 +371,45 @@
     createParticles();
     animateCounters();
     loadHomeCharts();
+    loadProfileStats();
+  }
+
+  async function loadProfileStats() {
+    const panel = document.getElementById('profileStatsPanel');
+    if (!panel) return;
+    try {
+      const user = await API.ghUser('MetinTahir');
+      const repos = await API.fetch('https://api.github.com/users/MetinTahir/repos?per_page=100');
+      const totalStars = repos.reduce((sum, r) => sum + r.stargazers_count, 0);
+      const totalForks = repos.reduce((sum, r) => sum + r.forks_count, 0);
+      const joinYear = new Date(user.created_at).getFullYear();
+      const exp = new Date().getFullYear() - joinYear;
+
+      panel.innerHTML = `
+        <div class="pstat-card">
+          <div class="pstat-icon">🚀</div>
+          <div class="pstat-num">${user.public_repos}</div>
+          <div class="pstat-label">Repo</div>
+        </div>
+        <div class="pstat-card">
+          <div class="pstat-icon">⭐</div>
+          <div class="pstat-num">${numFmt(totalStars)}</div>
+          <div class="pstat-label">Star</div>
+        </div>
+        <div class="pstat-card">
+          <div class="pstat-icon">👥</div>
+          <div class="pstat-num">${numFmt(user.followers)}</div>
+          <div class="pstat-label">Takipçi</div>
+        </div>
+        <div class="pstat-card">
+          <div class="pstat-icon">📅</div>
+          <div class="pstat-num">${exp > 0 ? exp + 'yıl' : joinYear}</div>
+          <div class="pstat-label">Deneyim</div>
+        </div>`;
+    } catch {
+      panel.innerHTML = `
+        <div class="pstat-card"><div class="pstat-icon">⚠️</div><div class="pstat-label">Yüklenemedi</div></div>`;
+    }
   }
 
   function createParticles() {
